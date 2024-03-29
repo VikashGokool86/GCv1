@@ -7,9 +7,12 @@
 
 <template>
    <div>
-    <button @click="fetchData">Fetch Data</button>
-    <pre v-if="data">{{ data }}</pre>
-  </div>
+        <h1>Hollywoodbets Greyville (SA)</h1>
+        <div>
+            <button @click="fetchData">Fetch Data</button>
+            <pre v-if="data">{{ data }}</pre>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -29,4 +32,6 @@
 </script>
 
 <style>
+
+
 </style>

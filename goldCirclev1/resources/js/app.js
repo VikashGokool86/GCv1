@@ -20,7 +20,6 @@ const router = createRouter({
 });
 
 const app = createApp(Index);
-// app.component('index', Index);
 app.use(router);
 app.mount('#app');
 

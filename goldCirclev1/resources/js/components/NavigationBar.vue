@@ -6,7 +6,7 @@
 </script>
 <template>
     <div class="topnav" id="myTopnav">
-        <router-link to="/home" class="active link">Home</router-link>
+        <router-link to="/home" class="link" target="" >Home</router-link>
         <router-link to="/grey" class="link">Hollywoodbets Greyville (SA)</router-link>
         <router-link to="/lyon" class="link">Lyon-Parilly (FR)</router-link>
         <router-link to="/red" class="link">Redcliffe (AUS)</router-link>
@@ -29,6 +29,7 @@
             }
         }
     }
+
 </script>
 
 <style>
@@ -37,7 +38,7 @@
   background-color: #333;
 }
 
-.topnav .link {
+.topnav a {
   float: left;
   display: block;
   color: #f2f2f2;
@@ -47,12 +48,12 @@
   font-size: 17px;
 }
 
-.topnav .link:hover {
+.topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
-.topnav .link.active {
+.topnav a.active {
   background-color: #f89a04;
   color: white;
 }
@@ -67,8 +68,8 @@
 }
 
 @media screen and (max-width: 600px) {
-  .topnav .link:not(:first-child) {display: none;}
-  .topnav .link.icon {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
     float: right;
     display: block;
   }
@@ -82,7 +83,7 @@
     top: 0;
     width: 10px;
   }
-  .topnav.responsive .link {
+  .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;

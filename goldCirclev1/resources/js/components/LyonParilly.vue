@@ -1,8 +1,10 @@
 <template>
     <div>
-        <index></index>
-        <navigation-bar></navigation-bar>
-        <div>Lyon-Parilly (France)</div>
+        <h1>Lyon-Parilly (France)</h1>
+        <div>
+            <button @click="fetchData">Fetch Data</button>
+            <pre v-if="data">{{ data }}</pre>
+        </div>
     </div>
 
 </template>

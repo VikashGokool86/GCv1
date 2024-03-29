@@ -1,10 +1,12 @@
 <template>
     <div>
-        <index></index>
-        <navigation-bar></navigation-bar>
-        <div>Redcliffe (Australia)</div>
 
-        
+        <h1>Redcliffe (Australia)</h1>
+        <div>
+            <button @click="fetchData">Fetch Data</button>
+            <pre v-if="data">{{ data }}</pre>
+        </div>
+
     </div>
 
 </template>
