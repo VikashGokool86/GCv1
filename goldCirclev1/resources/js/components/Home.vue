@@ -72,9 +72,8 @@
 
 <script>
 
- 
     export default {
-       
+
         data() {
             return {
             data1: null,
@@ -84,16 +83,16 @@
         },
         methods: {
             async fetchData() {
-            try {
-                const response1 = await fetch("/data/RaceCard_C3R.json");
-                this.data1 = await response1.json();
-                const response2 = await fetch("/data/RaceCard_LYO.json");
-                this.data2 = await response2.json();
-                const response3 = await fetch("/data/RaceCard_XGD.json");
-                this.data3 = await response3.json();
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
+                try {
+                    const response1 = await fetch("/data/RaceCard_C3R.json");
+                    this.data1 = await response1.json();
+                    const response2 = await fetch("/data/RaceCard_LYO.json");
+                    this.data2 = await response2.json();
+                    const response3 = await fetch("/data/RaceCard_XGD.json");
+                    this.data3 = await response3.json();
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                }
             }
         },
         mounted() {
@@ -103,10 +102,6 @@
 </script>
 
 <style>
-
-#transferData{
-    display: block;
-}
 
 .home_wrapper {
     padding: 6px 0;
@@ -121,16 +116,16 @@
 }
 
 .rc_btn{
-    padding: 4px; 
+    padding: 4px;
     background-color: #1a2f8a;
     color: #fff;
     width: 100%;
-    text-align: center; 
+    text-align: center;
 
-   
+
     border: 2px solid #1a2f8a;
     border-radius: 3px !important;
-   
+
 }
 
 .rc_wrapper {

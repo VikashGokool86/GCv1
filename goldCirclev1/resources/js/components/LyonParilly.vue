@@ -1,29 +1,47 @@
-<template>
-    <div>
-        <h1>Lyon-Parilly (France)</h1>
-        <div>
-            <button @click="fetchData">Fetch Data</button>
-            <pre v-if="data">{{ data }}</pre>
-        </div>
-    </div>
-
-</template>
-
-<script>
-    export default {
-        data() {
-    return {
-      data: null,
-    };
-  },
-  methods: {
-    async fetchData() {
-      const response = await fetch("/data/RaceCard_LYO.json");
-      this.data = await response.json();
-    }
-  }
+<script setup>
+    // where 'name' is the actual name of the file, and 'ext' is the extension
+    function getImageUrl(name, ext) {
+        return new URL(`./assets/img/${name}.${ext}`, import.meta.url).href
     }
 </script>
 
-<style scoped>
+<template>
+    <div class="home_wrapper">
+        <h1>Lyon-Parilly (FR)</h1>
+
+        <div v-if="loading">Loading...</div>
+        <div v-else class="home_wrapper2">
+            {{ data }}
+
+        </div>
+
+    </div>
+</template>
+
+<script>
+
+    export default {
+        data() {
+            return {
+                data: null
+            };
+        },
+        methods: {
+            async fetchData() {
+                try {
+                    const response = await fetch("/data/RaceCard_LYO.json");
+                    this.data = await response.json();
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                }
+            }
+        },
+        mounted() {
+            this.fetchData();
+        }
+    }
+</script>
+
+<style>
+
 </style>
