@@ -6,10 +6,10 @@
 </script>
 <template>
     <div class="topnav" id="myTopnav">
-        <router-link to="/home" class="link" target="" >Home</router-link>
-        <router-link to="/grey" class="link">Hollywoodbets Greyville (SA)</router-link>
-        <router-link to="/lyon" class="link">Lyon-Parilly (FR)</router-link>
-        <router-link to="/red" class="link">Redcliffe (AUS)</router-link>
+        <router-link to="/home" class="link"  :class="{ active: activePage === 'home' }" @click="setActive('home')">Home</router-link>
+        <router-link to="/grey" class="link" :class="{ active: activePage === 'grey' }" @click="setActive('grey')">Hollywoodbets Greyville (SA)</router-link>
+        <router-link to="/lyon" class="link" :class="{ active: activePage === 'lyon' }" @click="setActive('lyon')">Lyon-Parilly (FR)</router-link>
+        <router-link to="/red" class="link" :class="{ active: activePage === 'red' }" @click="setActive('red')">Redcliffe (AUS)</router-link>
         <a href="javascript:void(0);" class="icon link" @click="LoadResponsiveNav">
             <img class="fa-bars" :src="getImageUrl('hamburger-menu','svg')"  alt="Menu Icon" />
         </a>
@@ -18,6 +18,11 @@
 
 <script>
     export default {
+        data() {
+            return {
+                activePage: 'home'
+            }
+        },
         methods: {
             LoadResponsiveNav() {
                 var x = document.getElementById("myTopnav");
@@ -26,6 +31,10 @@
                 } else {
                     x.className = "topnav";
                 }
+            },
+            setActive(page) {
+                console.log(page)
+                this.activePage = page;
             }
         }
     }
@@ -53,7 +62,7 @@
   color: black;
 }
 
-.topnav a.active {
+.active {
   background-color: #f89a04;
   color: white;
 }

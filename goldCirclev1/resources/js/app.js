@@ -9,9 +9,9 @@ import Redcliffe from './components/Redcliffe.vue';
 
 const routes = [
     { path: '/:pathMatch(.*)*', component: Home },
-    { path: '/grey', component: Greyville },
-    { path: '/lyon', component: LyonParilly },
-    { path: '/red', component: Redcliffe },
+    { path: '/grey:pathMatch(.*)*', component: Greyville },
+    { path: '/lyon:pathMatch(.*)*', component: LyonParilly },
+    { path: '/red:pathMatch(.*)*', component: Redcliffe },
 ];
 
 const router = createRouter({
