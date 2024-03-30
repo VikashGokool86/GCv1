@@ -33,7 +33,6 @@
                 }
             },
             setActive(page) {
-                console.log(page)
                 this.activePage = page;
             }
         }

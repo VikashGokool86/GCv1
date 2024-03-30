@@ -22,7 +22,7 @@
                         <div class="rc_img"><img :src="getImageUrl('redcliffe-course','svg')"  alt="greyville course" class="gc-logo" width="150"/></div>
                     </div>
                     <div class="rc_btn_wrapper">
-                        <div class="rc_btn greyville"><router-link  to="/red" >View Redcliffe Race Card</router-link></div>
+                        <div class="rc_btn greyville"><router-link  to="/red" :class="{ active: activePage === 'red' }" @click="setActive1('red')" >View Redcliffe Race Card</router-link></div>
                     </div>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                         <div class="rc_img"><img :src="getImageUrl('greyville-course','svg')"  alt="greyville course" class="gc-logo" width="145"/></div>
                     </div>
                     <div class="rc_btn_wrapper">
-                        <div class="rc_btn lyon"><router-link  to="/grey" >View Greyville Race Card</router-link></div>
+                        <div class="rc_btn lyon"><router-link  to="/grey" :class="{ active: activePage === 'grey' }" @click="setActive1('grey')" >View Greyville Race Card</router-link></div>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                         <div class="rc_img"><img :src="getImageUrl('lyon-course','svg')"  alt="lyon course" class="gc-logo" width="150"/></div>
                     </div>
                     <div class="rc_btn_wrapper">
-                        <div class="rc_btn lyon"><router-link  to="/lyon" >View LyonParilly Race Card</router-link></div>
+                        <div class="rc_btn lyon"><router-link  to="/lyon" :class="{ active: activePage === 'lyon' }" @click="setActive1('lyon')" >View LyonParilly Race Card</router-link></div>
                     </div>
                 </div>
             </div>
@@ -79,13 +79,14 @@
 
         data() {
             return {
-            data1: null,
-            data2: null,
-            data3: null,
-            loading: true,
-            raceCountRed: 0,
-            raceCountLyon: 0,
-            raceCountGrey: 0
+                data1: null,
+                data2: null,
+                data3: null,
+                loading: true,
+                raceCountRed: 0,
+                raceCountLyon: 0,
+                raceCountGrey: 0,
+                activePage: 'home'  
             };
         },
         methods: {
@@ -114,7 +115,12 @@
                 if (this.data3 && this.data3.racecard && this.data3.racecard.races) {
                     this.raceCountGrey = this.data3.racecard.races.length;
                 }
+            },
+            setActive1(page) {
+                console.log(page)
+                this.activePage = page;
             }
+
         },
         mounted() {
             this.fetchData();
