@@ -1,7 +1,7 @@
 <template>
     <div class="race-detail">
         <div>Test</div>
-
+        <p>Location: {{ location }}</p>
         <p>Race Name: {{ race }}</p>
       <!-- Display other race details here -->
     </div>
@@ -12,7 +12,8 @@
     props: {
       race: {
         type: Object,
-      }
+      },
+      location: String
     }
   }
   </script>

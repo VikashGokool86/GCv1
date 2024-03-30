@@ -27,10 +27,14 @@
             </div>
             <div>
                 <div v-if="currentRaceItem">
-                    <RaceDetails :race="currentRaceItem" />
+                    <RaceDetails
+                        location="grey"
+                        :race="currentRaceItem" />
                     </div>
                 <div v-else class="">
-                    <RaceDetails :race="races[0]" />
+                    <RaceDetails
+                        location="grey"
+                        :race="races[0]" />
                 </div>
             </div>
         </div>
