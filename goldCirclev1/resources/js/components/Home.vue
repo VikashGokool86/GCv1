@@ -17,6 +17,7 @@
                             <div class="rc_info_data">{{ data1.racecard.day }} {{ data1.racecard.month }} {{ data1.racecard.year }}</div>
                             <div>{{ data1.racecard.dayOfWeek }}</div>
                             <div>Race: {{ data1.racecard.races[0]['race'] }} ({{ data1.racecard.races[0]['startTime'] }})</div>
+                            <div>{{ raceCountRed }} Races</div>
                         </div>
                         <div class="rc_img"><img :src="getImageUrl('redcliffe-course','svg')"  alt="greyville course" class="gc-logo" width="150"/></div>
                     </div>
@@ -36,6 +37,7 @@
                             <div class="rc_info_data">{{ data3.racecard.day }} {{ data3.racecard.month }} {{ data3.racecard.year }}</div>
                             <div>{{ data3.racecard.dayOfWeek }}</div>
                             <div>Race: {{ data3.racecard.races[0]['race'] }} ({{ data3.racecard.races[0]['startTime'] }})</div>
+                            <div>{{ raceCountGrey }} Races</div>
                         </div>
                         <div class="rc_img"><img :src="getImageUrl('greyville-course','svg')"  alt="greyville course" class="gc-logo" width="145"/></div>
                     </div>
@@ -55,6 +57,7 @@
                             <div class="rc_info_data">{{ data2.racecard.day }} {{ data2.racecard.month }} {{ data2.racecard.year }}</div>
                             <div>{{ data2.racecard.dayOfWeek }}</div>
                             <div>Race: {{ data2.racecard.races[0]['race'] }} ({{ data2.racecard.races[0]['startTime'] }})</div>
+                            <div>{{ raceCountLyon }} Races</div>
                         </div>
                         <div class="rc_img"><img :src="getImageUrl('lyon-course','svg')"  alt="lyon course" class="gc-logo" width="150"/></div>
                     </div>
@@ -79,6 +82,10 @@
             data1: null,
             data2: null,
             data3: null,
+            loading: true,
+            raceCountRed: 0,
+            raceCountLyon: 0,
+            raceCountGrey: 0
             };
         },
         methods: {
@@ -90,8 +97,22 @@
                     this.data2 = await response2.json();
                     const response3 = await fetch("/data/RaceCard_XGD.json");
                     this.data3 = await response3.json();
+                    this.loading = false;
+                     // gets the number of races
+                     this.updateRaceCount();
                 } catch (error) {
                     console.error('Error fetching data:', error);
+                }
+            },
+            updateRaceCount() {
+                if (this.data1 && this.data1.racecard && this.data1.racecard.races) {
+                    this.raceCountRed = this.data1.racecard.races.length;
+                }
+                if (this.data2 && this.data2.racecard && this.data2.racecard.races) {
+                    this.raceCountLyon = this.data2.racecard.races.length;
+                }
+                if (this.data3 && this.data3.racecard && this.data3.racecard.races) {
+                    this.raceCountGrey = this.data3.racecard.races.length;
                 }
             }
         },
@@ -157,7 +178,7 @@
     padding: 6px;
 }
 
-.rc_btn a {
+a {
     color: #dddddd;
     text-decoration: none;
 }

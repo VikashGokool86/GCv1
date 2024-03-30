@@ -8,18 +8,14 @@ function getImageUrl(name, ext) {
 <template>
     <header>
         <div>
-        <div class="gc-header">
-            <div><img :src="getImageUrl('gold-circle-logo2','jpg')"  alt="Gold Circle Logo" class="gc-logo"/></div>
-            <div class="gc-txt">Technical Assessment of Vikash Gokool</div>
-        </div>
-        <navigation-bar></navigation-bar>
-        
-
-        <router-view></router-view>
-
+            <div class="gc-header">
+                <div><img :src="getImageUrl('gold-circle-logo2','jpg')"  alt="Gold Circle Logo" class="gc-logo"/></div>
+                <div class="gc-txt">Technical Assessment of Vikash Gokool</div>
+            </div>
+            <navigation-bar></navigation-bar>
+            <router-view></router-view>
         </div>
     </header>
-
 </template>
 
 <script>
