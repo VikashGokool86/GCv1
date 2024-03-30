@@ -28,17 +28,21 @@
             <div>
                 <div v-if="currentRaceItem">
                     <RaceDetails
-                        location="grey"
+                        location="greyville-course"
                         :race="currentRaceItem" />
                     </div>
-                <div v-else class="">
-                    <RaceDetails
-                        location="grey"
+                <div v-else>
+                    <div v-if="races[0]">
+                        <RaceDetails
+                        location="greyville-course"
                         :race="races[0]" />
+                    </div>
+                    <div v-else>
+                        <p>No Data to display</p>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
 </template>
 
