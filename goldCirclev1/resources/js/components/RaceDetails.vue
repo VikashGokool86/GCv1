@@ -47,11 +47,29 @@
 
                         </div>
                         <div class="rc_horse_info_wrapper">
-                            <div> <span class="horse_no">{{  horse.horseNo }}</span> <span class="horse_name">{{  horse.horseName }}</span></div>
-                            <div class="horse_draw"><span class="horse_draw_title">Draw: </span>{{  horse.draw }} / {{ race.horses.length }}</div>
-                            <div>Jokey: {{  horse.jockeyName }}</div>
-                            <div>trainer: {{  horse.trainerName }}</div>
-                            <div>Weight:{{  horse.weight }}</div>
+                            <div class="horse_num_name_draw_wrapper">
+                                <div class="horse_num_name_wrapper">
+                                    <div class="horse_no">
+                                        {{  horse.horseNo }}
+                                    </div>
+                                    <div class="horse_name">
+                                        {{  horse.horseName }}
+                                    </div>
+                                </div>
+                                <div class="horse_draw_wrapper">
+                                    <div class="horse_draw">
+                                        {{ horse.draw }}
+                                    </div>
+                                    <div class="horse_total_num">
+                                        {{  race.horses.length }}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div> <span class="horse_no">{{  horse.horseNo }}</span> <span class="horse_name">{{  horse.horseName }}</span></div>
+                            <div class="horse_draw"><span class="horse_draw_title">Draw: </span>{{  horse.draw }} / {{ race.horses.length }}</div> -->
+                            <div class="horse_gen_info">Jokey: {{  horse.jockeyName }}</div>
+                            <div class="horse_gen_info">trainer: {{  horse.trainerName }}</div>
+                            <div class="horse_gen_info">Weight:{{  horse.weight }}</div>
 
                         </div>
                     </div>
@@ -189,10 +207,65 @@ export default {
         .rc_race_info_stake_wrapper{
             display: none;
         }
-        .rc_race_info_title{
+        .rc_race_info_title, .horse_name {
             font-size: 0.8em;
         }
 
+        .horse_gen_info{
+            font-size: 0.7em;
+        }
+
+    }
+
+    .horse_no{
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        padding: 4px;
+        background: #000;
+        border: 2px solid #f89c00;
+        color: whitesmoke;
+        text-align: center;
+        font: 22px Arial, sans-serif;
+    }
+
+    .horse_num_name_wrapper{
+        display: flex;
+    }
+
+    .horse_name{
+        margin: 7px 9px;
+        font-style: italic;
+    }
+
+    .horse_num_name_draw_wrapper{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .horse_num_name_wrapper{
+        display: flex;
+    }
+
+    .horse_draw_wrapper{
+        padding: 4px;
+        margin: 0 4px;
+        background: ;
+        background-color: #1a2f8a;
+        color: whitesmoke;
+        width: 35px;
+        text-align: center;
+        border-radius: 50%;
+        height: 35px;
+    }
+    .horse_draw{
+        border-bottom: 2px whitesmoke solid;
+    }
+
+    .horse_gen_info{
+        font-size: 0.8em;
+        font-style: italic;
+        margin-left: 6px;
     }
 
 
