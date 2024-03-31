@@ -56,21 +56,22 @@
                                         {{  horse.horseName }}
                                     </div>
                                 </div>
-                                <div class="horse_draw_wrapper">
-                                    <div class="horse_draw">
-                                        {{ horse.draw }}
-                                    </div>
-                                    <div class="horse_total_num">
-                                        {{  race.horses.length }}
+                                <div v-if="page_type === 'race'" >
+                                    <div class="horse_draw_wrapper">
+                                        <div class="horse_draw">
+                                            {{ horse.draw }}
+                                        </div>
+                                        <div class="horse_total_num">
+                                            {{  race.horses.length }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div> <span class="horse_no">{{  horse.horseNo }}</span> <span class="horse_name">{{  horse.horseName }}</span></div>
-                            <div class="horse_draw"><span class="horse_draw_title">Draw: </span>{{  horse.draw }} / {{ race.horses.length }}</div> -->
+                            <div v-if="page_type === 'search'" class="horse_gen_info">Draw: {{ horse.draw }}</div>
                             <div class="horse_gen_info">Jokey: {{  horse.jockeyName }}</div>
                             <div class="horse_gen_info">trainer: {{  horse.trainerName }}</div>
-                            <div class="horse_gen_info">Weight:{{  horse.weight }}</div>
-
+                            <div v-if="horse.weight > 0" class="horse_gen_info">Weight: {{  horse.weight }} kg</div>
+                            <div v-else class="horse_gen_info">Weight: N/A</div>
                         </div>
                     </div>
 
