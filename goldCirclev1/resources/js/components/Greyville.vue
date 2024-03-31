@@ -84,7 +84,6 @@
                     activeNumber: 1,
                     searchQuery: '',
                     searchResults: null
-
                 }
             },
             methods: {
