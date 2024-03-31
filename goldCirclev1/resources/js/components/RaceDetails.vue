@@ -8,7 +8,7 @@
 
 <template>
     <div class="race-detail">
-        <div class="rc_header">
+        <div v-if="page_type === 'race'" class="rc_header">
             <div class="rc_header_wrapper">
                 <div class="rc_header_course_img">
                     <img :src="getImageUrl(location,'svg')"  alt="location" class="gc-logo" width="150" />
@@ -33,7 +33,6 @@
         </div>
         <div v-if="race.horses">
             <div v-for="(horse, index1) in race.horses " :key="index1">
-
                 <div class="rc_horse_wrapper">
                     <div class="rc_horse_wrapper_data">
                         <div class="rc_horse_img">
@@ -101,9 +100,6 @@
         <div v-else class="">
             <p>No Race Data to display</p>
         </div>
-
-        <!-- <p>Location: {{ location }}</p>
-        <p>Race Name: {{ race }}</p> -->
     </div>
 </template>
 
@@ -118,7 +114,9 @@ export default {
       race: {
         type: Object,
       },
-      location: String
+      location: String,
+      page_type: String,
+      active_page_number:Intl
     },
     methods: {
         createPrizeList(prizeString) {

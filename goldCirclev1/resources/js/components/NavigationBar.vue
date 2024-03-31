@@ -10,7 +10,6 @@
         <router-link to="/grey" class="link" :class="{ active: activePage === 'grey' }" @click="setActive('grey')">Hollywoodbets Greyville (SA)</router-link>
         <router-link to="/lyon" class="link" :class="{ active: activePage === 'lyon' }" @click="setActive('lyon')">Lyon-Parilly (FR)</router-link>
         <router-link to="/red" class="link" :class="{ active: activePage === 'red' }" @click="setActive('red')">Redcliffe (AUS)</router-link>
-        <router-link to="/search" class="link" :class="{ active: activePage === 'search' }" @click="setActive('search')">Search</router-link>
         <a href="javascript:void(0);" class="icon link" @click="LoadResponsiveNav">
             <img class="fa-bars" :src="getImageUrl('hamburger-menu','svg')"  alt="Menu Icon" />
         </a>
