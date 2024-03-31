@@ -48,10 +48,10 @@
                         </div>
                         <div class="rc_horse_info_wrapper">
                             <div> <span class="horse_no">{{  horse.horseNo }}</span> <span class="horse_name">{{  horse.horseName }}</span></div>
-                            <div class="horse_draw"><span class="horse_draw_title">Draw: </span>{{  horse.draw }}</div>
-                            <div>{{  horse.jockeyName }}</div>
-                            <div>{{  horse.trainerName }}</div>
-                            <div>{{  horse.weight }}</div>
+                            <div class="horse_draw"><span class="horse_draw_title">Draw: </span>{{  horse.draw }} / {{ race.horses.length }}</div>
+                            <div>Jokey: {{  horse.jockeyName }}</div>
+                            <div>trainer: {{  horse.trainerName }}</div>
+                            <div>Weight:{{  horse.weight }}</div>
 
                         </div>
                     </div>
