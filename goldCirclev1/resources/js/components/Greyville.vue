@@ -35,11 +35,11 @@
                     <div class="search_results_close_btn" @click="closeSearch()">Close (X) </div>
                 </div>
                 <div v-for="search in searchResults" :key="search.race">
+                    <div class="go_race"  @click="selectRaceItem(races, search.race, true)">Result found in race {{ search.race }} - View Full Race Card</div>
                     <div v-if="search">
                     <RaceDetails
                         location="greyville-course"
                         page_type="search"
-                        :active_page_number=activeNumber
                         :race="search" />
                     </div>
                 </div>
@@ -49,7 +49,6 @@
                     <RaceDetails
                         location="greyville-course"
                         page_type="race"
-                        :active_page_number=activeNumber
                         :race="currentRaceItem" />
                     </div>
                 <div v-else>
@@ -57,7 +56,6 @@
                         <RaceDetails
                         location="greyville-course"
                         page_type="race"
-                        :active_page_number=activeNumber
                         :race="races[0]" />
                     </div>
                     <div v-else>
@@ -86,6 +84,7 @@
                     activeNumber: 1,
                     searchQuery: '',
                     searchResults: null
+
                 }
             },
             methods: {
@@ -100,7 +99,16 @@
                         console.error('Error fetching data:', error);
                     }
                 },
-                selectRaceItem(item, number) {
+                selectRaceItem(item, number, search = false) {
+                    if(search){
+                        if(number === 1){
+                            number = 0;
+                            item = item[number];
+                        }else{
+                            var number2 = number - 1;
+                            item = item[number2];
+                        }
+                    }
                     this.setActive(number)
                     this.currentRaceItem = item;
                     this.searchResults = null;
@@ -223,6 +231,14 @@
         padding: 4px;
 
         font-size: 0.8em;
+    }
+
+    .go_race{
+        background-color: #000;
+        color: antiquewhite;
+        padding: 6px;
+        margin: 6px;
+        max-width: 30%;
     }
 
 </style>

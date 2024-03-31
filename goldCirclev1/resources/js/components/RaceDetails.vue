@@ -116,7 +116,6 @@ export default {
       },
       location: String,
       page_type: String,
-      active_page_number:Intl
     },
     methods: {
         createPrizeList(prizeString) {
