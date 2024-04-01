@@ -10,9 +10,21 @@ Dependencies:
 
 ![image](https://github.com/VikashGokool86/GCv1/assets/107156013/65ef40ea-1939-4c63-8688-01d80e7054b4)
 
+Here are the different Screens of the app:
+
+Home:
+![image](https://github.com/VikashGokool86/GCv1/assets/107156013/4bc6efff-f84c-4e97-b0fd-f4bd5d089016)
+Home Responsive View:
+![image](https://github.com/VikashGokool86/GCv1/assets/107156013/5af7a1ff-35d1-4131-99d5-24baad6b6479)
+Responsive Navigation:
+![image](https://github.com/VikashGokool86/GCv1/assets/107156013/9ed8af0e-b9cd-47f1-b2e0-bc036e0cb709)
+
+First Race Course Greyvile:
+![image](https://github.com/VikashGokool86/GCv1/assets/107156013/8dda93bb-be31-42f3-af14-f2c785737359)
+![image](https://github.com/VikashGokool86/GCv1/assets/107156013/20c72824-805e-4b0c-93ac-1a17c9165e5c)
+![image](https://github.com/VikashGokool86/GCv1/assets/107156013/af856594-853a-4331-89bd-ee5657a9b228)
 
 
 
 
-![WhatsApp Image 2024-04-01 at 1 32 47 AM](https://github.com/VikashGokool86/GCv1/assets/107156013/0cb05a6b-29ad-4a73-967b-55969aa00c54)
 
